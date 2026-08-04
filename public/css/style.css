@@ -1692,6 +1692,27 @@
     .lg\:grid-cols-4 {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
+    .lg\:grid {
+      display: grid;
+    }
+    .lg\:items-center {
+      align-items: center;
+    }
+    .lg\:gap-12 {
+      gap: calc(var(--spacing) * 12);
+    }
+    .lg\:mt-0 {
+      margin-top: 0;
+    }
+    .lg\:mx-0 {
+      margin-inline: 0;
+    }
+    .lg\:justify-start {
+      justify-content: flex-start;
+    }
+    .lg\:text-left {
+      text-align: left;
+    }
     .lg\:gap-6 {
       gap: calc(var(--spacing) * 6);
     }
