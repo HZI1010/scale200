@@ -51,7 +51,7 @@
       <div class="space-y-8">
         <div>
           <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">The <span class="gradient-text">Production Readiness Kit</span></h1>
-          <p class="mt-4 text-lg text-text-muted">Five essential checklists and guides to take your vibe-coded app from prototype to production. Download once, use forever.</p>
+          <p class="mt-4 text-lg text-text-muted">Six essential checklists and guides to take your vibe-coded app from prototype to production. Download once, use forever.</p>
         </div>
         <div class="space-y-4">
           <div class="rounded-lg border border-brand-600 bg-brand-800/30 p-4"><div class="flex items-start gap-3"><div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-accent-purple/10"><svg class="h-3 w-3 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><div><h3 class="font-semibold">Security Checklist</h3><p class="text-sm text-text-muted">28-item security audit covering auth, secrets management, API hardening, CORS, rate limiting, and OWASP Top 10 for AI apps.</p></div></div></div>
@@ -59,12 +59,13 @@
           <div class="rounded-lg border border-brand-600 bg-brand-800/30 p-4"><div class="flex items-start gap-3"><div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-accent-purple/10"><svg class="h-3 w-3 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><div><h3 class="font-semibold">AI Testing Prompts</h3><p class="text-sm text-text-muted">15 battle-tested prompt templates for testing your app&rsquo;s edge cases, failure modes, and user scenarios before shipping.</p></div></div></div>
           <div class="rounded-lg border border-brand-600 bg-brand-800/30 p-4"><div class="flex items-start gap-3"><div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-accent-purple/10"><svg class="h-3 w-3 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><div><h3 class="font-semibold">Privacy Requirements</h3><p class="text-sm text-text-muted">GDPR &amp; CCPA compliance cheatsheet tailored for indie apps. Data mapping, consent flows, cookie banners, and privacy policy templates.</p></div></div></div>
           <div class="rounded-lg border border-brand-600 bg-brand-800/30 p-4"><div class="flex items-start gap-3"><div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-accent-purple/10"><svg class="h-3 w-3 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><div><h3 class="font-semibold">MVP Health Audit</h3><p class="text-sm text-text-muted">Scorecard to grade your app across 5 dimensions: security, performance, UX, code quality, and deployment readiness.</p></div></div></div>
+          <div class="rounded-lg border border-brand-600 bg-brand-800/30 p-4"><div class="flex items-start gap-3"><div class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded bg-accent-purple/10"><svg class="h-3 w-3 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 12 3.269 3.126A59.768 59.768 0 0 1 21.485 12 59.77 59.77 0 0 1 3.27 20.876L5.999 12Zm0 0h7.5"/></svg></div><div><h3 class="font-semibold">Launch Checklist</h3><p class="text-sm text-text-muted">Pre-flight review before going live: domain &amp; DNS, backups, error tracking, payment tests, and a final go-live sequence.</p></div></div></div>
         </div>
       </div>
       <div class="lg:pt-12">
         <div class="sticky top-24 rounded-xl border border-brand-600 bg-brand-800/50 p-6 sm:p-8">
           <h2 class="mb-2 text-xl font-bold">Get the Free Kit</h2>
-          <p class="mb-6 text-sm text-text-muted">Enter your details and we&rsquo;ll send you the download link.</p>
+          <p class="mb-6 text-sm text-text-muted">Enter your details and we&rsquo;ll email you the kit download link.</p>
           <form id="kit-form" class="space-y-4">
             <div><input name="name" type="text" placeholder="Your name" required class="w-full rounded-lg border border-brand-600 bg-brand-800/50 px-3 py-2 text-sm placeholder:text-text-muted/50 focus:outline-none focus:ring-2 focus:ring-accent-purple/50" /></div>
             <div><input name="email" type="email" placeholder="you@example.com" required class="w-full rounded-lg border border-brand-600 bg-brand-800/50 px-3 py-2 text-sm placeholder:text-text-muted/50 focus:outline-none focus:ring-2 focus:ring-accent-purple/50" /></div>
@@ -94,6 +95,7 @@
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
