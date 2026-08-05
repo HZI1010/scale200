@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark h-full antialiased">
+<html lang="en" class="h-full antialiased">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,38 +10,36 @@
 <body class="flex min-h-full flex-col bg-background text-foreground">
 
 <!-- HEADER -->
-<header id="header" class="sticky top-0 z-50 w-full transition-all duration-300 ease-out border-b border-transparent bg-brand-900/50 backdrop-blur-sm">
-  <div class="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-    <a href="/" class="flex items-center gap-2 shrink-0">
-      <div class="relative h-8 w-8 overflow-hidden rounded-lg">
-        <img src="img/logo.jpeg" alt="Scale200" class="object-contain w-full h-full" />
-      </div>
+<header id="header" class="sticky top-0 z-50 w-full border-b border-header backdrop-blur-sm">
+  <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+    <a href="/" class="flex shrink-0 items-center gap-2" aria-label="Scale200 - Home">
+      <div class="relative h-8 w-8 overflow-hidden rounded-lg"><img src="img/logo.jpeg" alt="Scale200 logo" class="h-full w-full object-contain" /></div>
       <span class="text-lg font-bold tracking-tight">Scale200</span>
     </a>
-    <nav class="hidden items-center gap-1.5 md:flex">
-      <a href="/" class="relative rounded-full border px-4 py-1.5 text-sm transition-all duration-300 border-accent-pink/30 bg-accent-pink/10 text-accent-pink">Home</a>
-      <a href="kit.html" class="relative rounded-full border px-4 py-1.5 text-sm transition-all duration-300 border-transparent text-text-muted hover:border-white/10 hover:bg-white/[0.04] hover:text-foreground">Kit</a>
-      <a href="service.html" class="relative rounded-full border px-4 py-1.5 text-sm transition-all duration-300 border-transparent text-text-muted hover:border-white/10 hover:bg-white/[0.04] hover:text-foreground">Service</a>
-      <a href="pricing.html" class="relative rounded-full border px-4 py-1.5 text-sm transition-all duration-300 border-transparent text-text-muted hover:border-white/10 hover:bg-white/[0.04] hover:text-foreground">Pricing</a>
-      <a href="blog.html" class="relative rounded-full border px-4 py-1.5 text-sm transition-all duration-300 border-transparent text-text-muted hover:border-white/10 hover:bg-white/[0.04] hover:text-foreground">Blog</a>
-      <a href="contact.html" class="relative rounded-full border px-4 py-1.5 text-sm transition-all duration-300 border-transparent text-text-muted hover:border-white/10 hover:bg-white/[0.04] hover:text-foreground">Contact</a>
+    <nav class="hidden items-center gap-6 md:flex" aria-label="Main navigation">
+      <a href="/" class="nav-link active">Home</a>
+      <a href="kit.html" class="nav-link">Kit</a>
+      <a href="service.html" class="nav-link">Service</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </nav>
     <div class="hidden md:block">
-      <a href="service.html" class="shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all h-7 gap-1 px-2.5 text-[0.8rem] bg-accent-pink text-black hover:bg-accent-pink/90 glow-blue relative overflow-hidden inline-flex">Book a Call</a>
+      <a href="contact.html" class="btn-primary">Book a Call</a>
     </div>
-    <button id="menu-btn" class="md:hidden" aria-label="Toggle menu">
-      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    <button id="menu-btn" class="menu-btn md:hidden" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false">
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
   </div>
-  <div id="mobile-menu" class="mobile-menu border-t border-brand-600/50 bg-brand-900/95 backdrop-blur-xl px-4 pb-6 pt-4 md:hidden">
-    <nav class="flex flex-col gap-2">
-      <a href="/" class="relative rounded-full border border-accent-pink/30 bg-accent-pink/10 text-accent-pink px-4 py-1.5 text-sm">Home</a>
-      <a href="kit.html" class="relative rounded-full border border-transparent text-text-muted hover:border-white/10 px-4 py-1.5 text-sm">Kit</a>
-      <a href="service.html" class="relative rounded-full border border-transparent text-text-muted hover:border-white/10 px-4 py-1.5 text-sm">Service</a>
-      <a href="pricing.html" class="relative rounded-full border border-transparent text-text-muted hover:border-white/10 px-4 py-1.5 text-sm">Pricing</a>
-      <a href="blog.html" class="relative rounded-full border border-transparent text-text-muted hover:border-white/10 px-4 py-1.5 text-sm">Blog</a>
-      <a href="contact.html" class="relative rounded-full border border-transparent text-text-muted hover:border-white/10 px-4 py-1.5 text-sm">Contact</a>
-      <a href="service.html" class="mt-2 shrink-0 w-full items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all h-7 gap-1 px-2.5 text-[0.8rem] bg-accent-pink text-black hover:bg-accent-pink/90 inline-flex">Book a Call</a>
+  <div id="mobile-menu" class="mobile-menu px-4 pb-6 pt-4 md:hidden">
+    <nav class="flex flex-col gap-1" aria-label="Mobile navigation">
+      <a href="/" class="mobile-nav-link active">Home</a>
+      <a href="kit.html" class="mobile-nav-link">Kit</a>
+      <a href="service.html" class="mobile-nav-link">Service</a>
+      <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="blog.html" class="mobile-nav-link">Blog</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="contact.html" class="btn-primary mt-3">Book a Call</a>
     </nav>
   </div>
 </header>
@@ -49,60 +47,158 @@
 <main class="flex-1">
 
 <!-- HERO -->
-<section class="relative min-h-screen overflow-hidden px-4 pb-20 pt-16 sm:px-6 sm:pb-28 sm:pt-24 lg:px-8">
-  <div class="grid-bg pointer-events-none absolute inset-0 opacity-20"></div>
-
-  <div class="pointer-events-none absolute -left-40 -top-40 h-[600px] w-[600px] rounded-full bg-accent-pink/15 blur-[120px] float-slow"></div>
-  <div class="pointer-events-none absolute -right-40 top-20 h-[500px] w-[500px] rounded-full bg-accent-purple/20 blur-[120px]" style="animation:float 12s ease-in-out infinite"></div>
-  <div class="pointer-events-none absolute left-1/2 top-1/3 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-cyan/10 blur-[100px]" style="animation:scalePulse 8s ease-in-out infinite"></div>
-
-  <div class="pointer-events-none absolute h-2 w-2 rounded-full bg-accent-cyan/30" style="left:20%;top:15%;animation:float 3s ease-in-out infinite"></div>
-  <div class="pointer-events-none absolute h-2 w-2 rounded-full bg-accent-cyan/30" style="left:45%;top:65%;animation:float 4s ease-in-out infinite 0.5s"></div>
-  <div class="pointer-events-none absolute h-2 w-2 rounded-full bg-accent-cyan/30" style="left:70%;top:35%;animation:float 5s ease-in-out infinite 1s"></div>
-  <div class="pointer-events-none absolute h-2 w-2 rounded-full bg-accent-cyan/30" style="left:95%;top:55%;animation:float 3.5s ease-in-out infinite 1.5s"></div>
-
-  <div class="relative mx-auto max-w-7xl lg:grid lg:grid-cols-hero lg:items-center lg:gap-12">
-    <div class="text-center lg:text-left">
-      <div class="hero-sweep space-y-1 sm:space-y-2">
-        <div class="text-text-muted text-xl sm:text-3xl md:text-4xl lg:text-5xl font-light">
-          <span class="bouncy-word" style="animation-delay:0.4s">From</span>
+<section class="relative overflow-hidden">
+  <div class="mx-auto max-w-7xl px-4 pb-20 pt-16 sm:px-6 sm:pb-28 sm:pt-24 lg:px-8">
+    <div class="hero-grid">
+      <div class="mx-auto max-w-xl text-center lg:mx-0 lg:text-left">
+        <p class="hero-eyebrow">Production Readiness for AI-Built Apps</p>
+        <h1 class="hero-title">From <span class="hero-accent">vibe-coded</span> to <span class="hero-accent">production-ready</span>.</h1>
+        <p class="hero-sub">You built the first version fast. We strengthen the code, security, infrastructure and deployment so your app can handle real users and real growth.</p>
+        <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 lg:justify-start">
+          <a href="contact.html" class="btn-primary btn-lg">Book a Discovery Call</a>
+          <a href="service.html" class="btn-secondary btn-lg">See How It Works <svg class="size-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
         </div>
-        <div class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight" style="line-height:1.5">
-          <span class="bouncy-word gradient-text-shimmer" style="animation-delay:0.6s">Vibe-Coded</span>
-        </div>
-        <div class="text-text-muted/60 text-base sm:text-2xl font-light italic" style="opacity:0;animation:fadeIn 0.4s ease-out 0.9s forwards">
-          to
-        </div>
-        <div class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight" style="line-height:1.5">
-          <span class="bouncy-word gradient-text-shimmer" style="animation-delay:1.1s">Production-Ready</span>
-        </div>
+        <p class="hero-trust">
+          <span>Security audit</span><span class="sep">&middot;</span>
+          <span>Scalable infrastructure</span><span class="sep">&middot;</span>
+          <span>CI/CD</span><span class="sep">&middot;</span>
+          <span>Ongoing support</span>
+        </p>
       </div>
 
-      <p class="mx-auto mt-4 sm:mt-6 max-w-xl text-base text-text-muted sm:text-xl lg:mx-0" style="opacity:0;animation:fadeInUp 0.5s ease-out 1.5s forwards">
-        You built something amazing with AI. We make it production-ready.
-        Our team audits your app, secures infrastructure, sets up CI/CD pipelines,
-        and provides ongoing support &mdash; so you can ship with confidence.
-      </p>
+      <div class="w-full">
+        <svg class="hero-ill" viewBox="0 0 700 540" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An AI-built prototype on the left flows through a processing step and becomes a secure, scalable production app with infrastructure, database, monitoring, deployment and users on the right.">
+          <defs>
+            <linearGradient id="ill-win" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#16233f"/>
+              <stop offset="1" stop-color="#0f1a33"/>
+            </linearGradient>
+          </defs>
 
-      <div class="mt-8 sm:mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start sm:gap-4" style="opacity:0;animation:fadeInUp 0.5s ease-out 1.9s forwards">
-        <a href="service.html" class="shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all h-9 gap-1.5 px-2.5 bg-accent-pink text-black hover:bg-accent-pink/90 glow-blue relative overflow-hidden inline-flex"><svg class="size-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg> Book a Discovery Call</a>
-        <a href="pricing.html" class="shrink-0 items-center justify-center rounded-lg border bg-clip-padding text-sm font-medium whitespace-nowrap transition-all h-9 gap-1.5 px-2.5 border-accent-purple text-accent-purple hover:bg-accent-purple/10 bg-background inline-flex">View Pricing <svg class="size-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
-      </div>
+          <!-- Prototype window (rough) -->
+          <g>
+            <rect x="20" y="170" width="200" height="200" rx="14" fill="url(#ill-win)" stroke="#2a3d6b"/>
+            <path d="M20 204 H220" stroke="#2a3d6b"/>
+            <circle cx="44" cy="187" r="4" fill="#2a3d6b"/>
+            <circle cx="58" cy="187" r="4" fill="#2a3d6b"/>
+            <circle cx="72" cy="187" r="4" fill="#2a3d6b"/>
+            <rect x="164" y="179" width="36" height="16" rx="8" fill="#1a2d52"/>
+            <circle class="ill-dot pending" cx="174" cy="187" r="3" fill="#8ea3c0"/>
+            <rect x="40" y="224" width="150" height="13" rx="6.5" fill="#2a3d6b"/>
+            <rect x="40" y="250" width="112" height="13" rx="6.5" fill="#3a4f7d"/>
+            <rect x="40" y="276" width="96" height="13" rx="6.5" fill="#3a4f7d" transform="rotate(-2 88 282)"/>
+            <rect x="40" y="302" width="140" height="13" rx="6.5" fill="#2a3d6b"/>
+            <rect x="40" y="328" width="70" height="13" rx="6.5" fill="#3a4f7d"/>
+            <g transform="translate(178,318)">
+              <path d="M0 13 L11 0 L22 13 Z" stroke="#e5a944" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M11 4.5 v3.2" stroke="#e5a944" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="11" cy="11" r="1.5" fill="#e5a944"/>
+            </g>
+          </g>
 
-      <div class="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm text-text-muted lg:justify-start" style="opacity:0;animation:fadeIn 0.4s ease-out 2.3s forwards">
-        <span class="flex items-center gap-1.5"><span class="flex h-1.5 w-1.5 rounded-full bg-accent-cyan" style="animation:scalePulse 1.5s ease-in-out infinite"></span>Security Audit</span>
-        <span class="flex items-center gap-1.5"><span class="flex h-1.5 w-1.5 rounded-full bg-accent-pink" style="animation:scalePulse 1.5s ease-in-out infinite 0.4s"></span>CI/CD Pipeline</span>
-        <span class="flex items-center gap-1.5"><span class="flex h-1.5 w-1.5 rounded-full bg-accent-purple" style="animation:scalePulse 1.5s ease-in-out infinite 0.8s"></span>Ongoing Support</span>
-      </div>
-    </div>
+          <!-- Flow into and out of the hub -->
+          <path class="ill-flow" d="M220 270 H272" stroke="#2d9cdb" stroke-width="2" stroke-linecap="round"/>
+          <path class="ill-flow" d="M328 270 H400" stroke="#2d9cdb" stroke-width="2" stroke-linecap="round"/>
+          <circle class="ill-packet" cx="326" cy="270" r="4" fill="#6bb8ff"/>
 
-    <div class="relative mt-12 lg:mt-0">
-      <div class="pointer-events-none absolute -inset-6 -z-10 rounded-full opacity-60 blur-3xl" style="background:linear-gradient(135deg, rgba(45,156,219,0.55), rgba(1,119,217,0.45) 50%, rgba(107,184,255,0.4))"></div>
-      <div class="relative" style="border-radius:1.25rem;overflow:hidden;background:linear-gradient(135deg, #2d9cdb, #0177d9 55%, #6bb8ff)">
-        <video class="w-full" style="aspect-ratio:16/9;object-fit:cover;mix-blend-mode:screen;border-radius:1.25rem" autoplay playsinline preload="auto">
-          <source src="/videos/toolkit-hero.mp4" type="video/mp4">
-        </video>
-        <div class="pointer-events-none absolute inset-0" style="border-radius:1.25rem;background:linear-gradient(135deg, #2d9cdb 0%, #0177d9 40%, #6bb8ff 75%, #2d9cdb 100%);mix-blend-mode:color;opacity:0.92"></div>
+          <!-- Processing hub -->
+          <g transform="translate(300,270)">
+            <circle class="ill-hub-ring" r="26" stroke="#2d9cdb" stroke-width="1.5" stroke-dasharray="5 7"/>
+            <circle r="18" fill="#1179af"/>
+            <path class="ill-check" d="M-6 -0.5 L-1.5 4.5 L7 -4.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+
+          <!-- Production window (polished) -->
+          <g>
+            <rect x="400" y="120" width="212" height="220" rx="14" fill="url(#ill-win)" stroke="#1179af" stroke-width="1.5"/>
+            <path d="M400 154 H612" stroke="#2a3d6b"/>
+            <circle cx="424" cy="137" r="4" fill="#1179af"/>
+            <circle cx="438" cy="137" r="4" fill="#1179af"/>
+            <circle cx="452" cy="137" r="4" fill="#1179af"/>
+            <rect x="558" y="129" width="38" height="16" rx="8" fill="rgba(52,211,153,0.14)"/>
+            <circle class="ill-dot ready" cx="568" cy="137" r="3" fill="#34d399"/>
+            <g transform="translate(586,150)">
+              <circle r="10" fill="#1179af"/>
+              <path d="M-4 -0.5 L-1 3 L5 -3.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <rect x="420" y="176" width="172" height="12" rx="6" fill="#3a4f7d"/>
+            <rect x="420" y="200" width="140" height="12" rx="6" fill="#2a3d6b"/>
+            <rect x="420" y="224" width="156" height="12" rx="6" fill="#3a4f7d"/>
+            <rect x="420" y="248" width="118" height="12" rx="6" fill="#2a3d6b"/>
+            <rect x="420" y="278" width="172" height="6" rx="3" fill="#1a2d52"/>
+            <rect class="ill-progress" x="420" y="278" width="118" height="6" rx="3" fill="#1179af"/>
+            <circle class="ill-dot ready" cx="545" cy="281" r="4" fill="#34d399"/>
+            <circle class="ill-dot ready" cx="420" cy="314" r="4" fill="#6bb8ff"/>
+            <circle class="ill-dot ready" cx="442" cy="314" r="4" fill="#2d9cdb"/>
+            <circle class="ill-dot ready" cx="464" cy="314" r="4" fill="#34d399"/>
+            <rect x="482" y="311" width="56" height="6" rx="3" fill="#2a3d6b"/>
+          </g>
+
+          <!-- Users reaching the production app -->
+          <g>
+            <path d="M388 150 H400" stroke="#2a3d6b" stroke-width="1.5"/>
+            <path d="M388 190 H400" stroke="#2a3d6b" stroke-width="1.5"/>
+            <path d="M388 230 H400" stroke="#2a3d6b" stroke-width="1.5"/>
+            <g>
+              <circle cx="380" cy="146" r="5" fill="#6bb8ff"/>
+              <path d="M371.5 162 a8.5 8.5 0 0 1 17 0 z" fill="#6bb8ff"/>
+            </g>
+            <g>
+              <circle cx="380" cy="186" r="5" fill="#2d9cdb"/>
+              <path d="M371.5 202 a8.5 8.5 0 0 1 17 0 z" fill="#2d9cdb"/>
+            </g>
+            <g>
+              <circle cx="380" cy="226" r="5" fill="#1179af"/>
+              <path d="M371.5 242 a8.5 8.5 0 0 1 17 0 z" fill="#1179af"/>
+            </g>
+          </g>
+
+          <!-- Infrastructure nodes -->
+          <g>
+            <path class="ill-flow" d="M436 340 C 436 375, 414 395, 414 411"/>
+            <path class="ill-flow" d="M508 340 C 508 375, 494 395, 494 411"/>
+            <path class="ill-flow" d="M580 340 C 580 375, 574 395, 574 411"/>
+            <path class="ill-flow" d="M600 340 C 600 370, 650 385, 654 410"/>
+
+            <g transform="translate(414,435)">
+              <circle r="24" fill="#0f1a33" stroke="#2a3d6b"/>
+              <path d="M0 -12 C7 -12 12 -5 12 -4 V2 C12 8 6 12 0 14 C-6 12 -12 8 -12 2 V-4 C-12 -5 -7 -12 0 -12 Z" stroke="#6bb8ff" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M-4 -3 L-1 0 L4 -7" stroke="#6bb8ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle class="ill-dot ready" cx="16" cy="16" r="3.5" fill="#34d399"/>
+            </g>
+            <g transform="translate(494,435)">
+              <circle r="24" fill="#0f1a33" stroke="#2a3d6b"/>
+              <ellipse cx="0" cy="-9" rx="9" ry="3.5" stroke="#6bb8ff" stroke-width="1.8"/>
+              <path d="M-9 -9 v14 a9 3.5 0 0 0 18 0 v-14" stroke="#6bb8ff" stroke-width="1.8"/>
+              <path d="M-9 -2 a9 3.5 0 0 0 18 0" stroke="#6bb8ff" stroke-width="1.8"/>
+              <circle class="ill-dot pending" cx="-16" cy="16" r="3.5" fill="#6bb8ff"/>
+            </g>
+            <g transform="translate(574,435)">
+              <circle r="24" fill="#0f1a33" stroke="#2a3d6b"/>
+              <rect x="-10" y="-12" width="20" height="7" rx="2" stroke="#6bb8ff" stroke-width="1.8"/>
+              <rect x="-10" y="-2" width="20" height="7" rx="2" stroke="#6bb8ff" stroke-width="1.8"/>
+              <circle cx="-5" cy="-8.5" r="1.2" fill="#6bb8ff"/>
+              <circle cx="-5" cy="1.5" r="1.2" fill="#6bb8ff"/>
+              <circle class="ill-dot ready" cx="16" cy="-16" r="3.5" fill="#34d399"/>
+            </g>
+            <g transform="translate(654,435)">
+              <circle r="24" fill="#0f1a33" stroke="#2a3d6b"/>
+              <rect x="-10" y="-4" width="5" height="10" rx="1.5" fill="#6bb8ff"/>
+              <rect x="-3" y="-9" width="5" height="15" rx="1.5" fill="#2d9cdb"/>
+              <rect x="4" y="-1" width="5" height="7" rx="1.5" fill="#34d399"/>
+              <circle class="ill-dot pending" cx="-16" cy="-16" r="3.5" fill="#6bb8ff"/>
+            </g>
+          </g>
+
+          <!-- Deployment arrow + live status -->
+          <g>
+            <path class="ill-flow" d="M480 505 H548" stroke="#2d9cdb" stroke-width="2" stroke-linecap="round"/>
+            <path d="M548 499 L558 505 L548 511 Z" fill="#1179af"/>
+            <rect x="562" y="495" width="56" height="20" rx="10" fill="#1a2d52" stroke="#2a3d6b"/>
+            <circle class="ill-dot ready" cx="574" cy="505" r="3" fill="#34d399"/>
+            <rect x="586" y="502" width="20" height="6" rx="3" fill="#2a3d6b"/>
+          </g>
+        </svg>
       </div>
     </div>
   </div>
@@ -114,32 +210,29 @@
     <div class="section-divider-line mb-12 sm:mb-16"></div>
     <div class="grid gap-12 lg:grid-cols-2 lg:gap-16">
       <div class="reveal space-y-6">
-        <h2 class="text-2xl font-bold tracking-tight sm:text-4xl">
-          <span class="inline-block">You built it fast.</span><br />
-          <span class="gradient-text-shimmer inline-block mt-1">Now ship it safe.</span>
-        </h2>
+        <h2 class="text-2xl font-bold tracking-tight sm:text-4xl">You built it fast. <span class="hero-accent">Now ship it safe.</span></h2>
         <p class="text-sm sm:text-lg text-text-muted">Vibe coding gets you from zero to working prototype incredibly fast. But production security, deployment pipelines, privacy compliance, and thorough testing? That&rsquo;s the boring stuff that separates a shipped product from a side project.</p>
         <p class="text-sm sm:text-lg text-text-muted">Scale200 is the production readiness service for AI-built apps &mdash; we audit, secure, and deploy your app so you can focus on building.</p>
-        <a href="service.html" class="inline-flex items-center gap-2 text-accent-purple hover:text-accent-pink transition-colors group text-sm">See how it works <span class="inline-block" style="animation:floatRight 1s ease-in-out infinite"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></span></a>
+        <a href="service.html" class="inline-flex items-center gap-2 text-accent-purple hover:text-accent-pink transition-colors group text-sm">See how it works <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
       </div>
       <div class="grid gap-4 sm:grid-cols-2 stagger-c reveal">
         <div class="card-hover rounded-xl border border-brand-600 bg-brand-800/50 p-4 sm:p-5 transition-all">
-          <div class="mb-3 inline-flex rounded-lg bg-accent-pink/10 p-2.5" style="animation:scaleRotate 2s ease-in-out infinite"><svg class="h-5 w-5 text-accent-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3a3 3 0 0 0-3 3v1H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2V6a3 3 0 0 0-3-3Z"/></svg></div>
+          <div class="mb-3 inline-flex rounded-lg bg-accent-pink/10 p-2.5"><svg class="h-5 w-5 text-accent-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3a3 3 0 0 0-3 3v1H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2V6a3 3 0 0 0-3-3Z"/></svg></div>
           <h3 class="mb-1.5 font-semibold">Security</h3>
           <p class="text-sm text-text-muted">OWASP-inspired checklist covering auth, secrets, API hardening, and more for AI-built apps.</p>
         </div>
         <div class="card-hover rounded-xl border border-brand-600 bg-brand-800/50 p-4 sm:p-5 transition-all">
-          <div class="mb-3 inline-flex rounded-lg bg-accent-purple/10 p-2.5" style="animation:scaleRotate 2s ease-in-out infinite 0.4s"><svg class="h-5 w-5 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/></svg></div>
+          <div class="mb-3 inline-flex rounded-lg bg-accent-purple/10 p-2.5"><svg class="h-5 w-5 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/></svg></div>
           <h3 class="mb-1.5 font-semibold">Deployment</h3>
           <p class="text-sm text-text-muted">End-to-end deployment pipeline: Docker, CI/CD, env vars, SSL, monitoring, rollback.</p>
         </div>
         <div class="card-hover rounded-xl border border-brand-600 bg-brand-800/50 p-4 sm:p-5 transition-all">
-          <div class="mb-3 inline-flex rounded-lg bg-accent-cyan/10 p-2.5" style="animation:scaleRotate 2s ease-in-out infinite 0.8s"><svg class="h-5 w-5 text-accent-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2.25a9 9 0 0 1 9 9c0 2.97-1.44 5.62-3.65 7.25l-.35.25v2.25a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1-.75-.75v-1.5H11.25v1.5a.75.75 0 0 1-.75.75H8.25a.75.75 0 0 1-.75-.75V18.5l-.35-.25A9 9 0 0 1 3 11.25a9 9 0 0 1 9-9Z"/></svg></div>
+          <div class="mb-3 inline-flex rounded-lg bg-accent-cyan/10 p-2.5"><svg class="h-5 w-5 text-accent-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2.25a9 9 0 0 1 9 9c0 2.97-1.44 5.62-3.65 7.25l-.35.25v2.25a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1-.75-.75v-1.5H11.25v1.5a.75.75 0 0 1-.75.75H8.25a.75.75 0 0 1-.75-.75V18.5l-.35-.25A9 9 0 0 1 3 11.25a9 9 0 0 1 9-9Z"/></svg></div>
           <h3 class="mb-1.5 font-semibold">Testing</h3>
           <p class="text-sm text-text-muted">AI-powered prompt templates to test edge cases, failure modes, and user scenarios.</p>
         </div>
         <div class="card-hover rounded-xl border border-brand-600 bg-brand-800/50 p-4 sm:p-5 transition-all">
-          <div class="mb-3 inline-flex rounded-lg bg-accent-pink/10 p-2.5" style="animation:scaleRotate 2s ease-in-out infinite 1.2s"><svg class="h-5 w-5 text-accent-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg></div>
+          <div class="mb-3 inline-flex rounded-lg bg-accent-pink/10 p-2.5"><svg class="h-5 w-5 text-accent-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg></div>
           <h3 class="mb-1.5 font-semibold">Privacy</h3>
           <p class="text-sm text-text-muted">GDPR &amp; CCPA compliance cheatsheet with data mapping, consent flows, and policy templates.</p>
         </div>
@@ -153,31 +246,31 @@
   <div class="mx-auto max-w-7xl">
     <div class="section-divider-line mb-12 sm:mb-16"></div>
     <div class="reveal text-center">
-      <h2 class="text-2xl font-bold tracking-tight sm:text-4xl">Don&rsquo;t Want to <span class="gradient-text-shimmer">Do It Yourself?</span></h2>
+      <h2 class="text-2xl font-bold tracking-tight sm:text-4xl">Don&rsquo;t Want to <span class="hero-accent">Do It Yourself?</span></h2>
       <p class="mx-auto mt-4 max-w-2xl text-sm sm:text-lg text-text-muted">Get hands-on help from production engineers. We&rsquo;ll audit, fix, and deploy your app so you can focus on building.</p>
     </div>
     <div class="mt-12 grid gap-6 sm:grid-cols-3 stagger-c reveal">
       <div class="card-hover group relative rounded-xl border border-brand-600 bg-brand-900/50 p-6 transition-all">
-        <div class="mb-4 h-1.5 rounded-full bg-gradient-to-r from-accent-pink to-accent-purple" style="width:3rem;animation:widthPulse 2s ease-in-out infinite"></div>
+        <div class="mb-4 h-1.5 w-12 rounded-full bg-accent-pink"></div>
         <h3 class="mb-2 text-lg font-semibold">Production Audit</h3>
         <p class="mb-6 text-sm text-text-muted">Don&rsquo;t want to do it yourself? Our team will run your app through the full gauntlet and deliver a prioritized fix list.</p>
-        <a href="service.html" class="inline-flex items-center gap-2 text-sm text-accent-purple hover:text-accent-pink transition-colors">Learn more <span class="inline-block" style="animation:floatRight 1s ease-in-out infinite"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></span></a>
+        <a href="service.html" class="inline-flex items-center gap-2 text-sm text-accent-purple hover:text-accent-pink transition-colors">Learn more <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
       </div>
       <div class="card-hover group relative rounded-xl border border-brand-600 bg-brand-900/50 p-6 transition-all">
-        <div class="mb-4 h-1.5 rounded-full bg-gradient-to-r from-accent-purple to-accent-cyan" style="width:4.5rem;animation:widthPulse 2s ease-in-out infinite 0.3s"></div>
+        <div class="mb-4 h-1.5 w-16 rounded-full bg-accent-purple"></div>
         <h3 class="mb-2 text-lg font-semibold">Full Setup</h3>
         <p class="mb-6 text-sm text-text-muted">We set up your deployment pipeline, configure monitoring, harden security, and make sure everything is ship-shape.</p>
-        <a href="service.html" class="inline-flex items-center gap-2 text-sm text-accent-purple hover:text-accent-pink transition-colors">Learn more <span class="inline-block" style="animation:floatRight 1s ease-in-out infinite 0.2s"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></span></a>
+        <a href="service.html" class="inline-flex items-center gap-2 text-sm text-accent-purple hover:text-accent-pink transition-colors">Learn more <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
       </div>
       <div class="card-hover group relative rounded-xl border border-brand-600 bg-brand-900/50 p-6 transition-all">
-        <div class="mb-4 h-1.5 rounded-full bg-gradient-to-r from-accent-cyan to-accent-pink" style="width:3rem;animation:widthPulse 2s ease-in-out infinite 0.6s"></div>
+        <div class="mb-4 h-1.5 w-12 rounded-full bg-accent-cyan"></div>
         <h3 class="mb-2 text-lg font-semibold">Ongoing Support</h3>
         <p class="mb-6 text-sm text-text-muted">Production doesn&rsquo;t end at launch. Get continuous monitoring review and priority support for your live app.</p>
-        <a href="service.html" class="inline-flex items-center gap-2 text-sm text-accent-purple hover:text-accent-pink transition-colors">Learn more <span class="inline-block" style="animation:floatRight 1s ease-in-out infinite 0.4s"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></span></a>
+        <a href="service.html" class="inline-flex items-center gap-2 text-sm text-accent-purple hover:text-accent-pink transition-colors">Learn more <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
       </div>
     </div>
     <div class="reveal mt-12 text-center">
-      <a href="pricing.html" class="shrink-0 items-center justify-center rounded-lg border bg-clip-padding text-sm font-medium whitespace-nowrap transition-all h-9 gap-1.5 px-2.5 border-accent-purple text-accent-purple hover:bg-accent-purple/10 bg-background inline-flex">Explore Pricing <svg class="size-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+      <a href="pricing.html" class="btn-secondary">Explore Pricing <svg class="size-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
     </div>
   </div>
 </section>
@@ -187,7 +280,7 @@
   <div class="mx-auto max-w-7xl">
     <div class="section-divider-line mb-12 sm:mb-16"></div>
     <div class="reveal text-center">
-      <h2 class="text-2xl font-bold tracking-tight sm:text-4xl">Used by Solo Devs <span class="gradient-text-shimmer">Shipping Their First SaaS</span></h2>
+      <h2 class="text-2xl font-bold tracking-tight sm:text-4xl">Used by Solo Devs <span class="hero-accent">Shipping Their First SaaS</span></h2>
     </div>
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 stagger-c reveal">
       <div class="card-hover rounded-xl border border-brand-600 bg-brand-800/50 p-6 transition-all">
@@ -219,49 +312,49 @@
   <div class="mx-auto max-w-7xl">
     <div class="section-divider-line mb-12 sm:mb-16"></div>
     <div class="reveal text-center">
-      <h2 class="text-2xl font-bold tracking-tight sm:text-4xl">Everything You Need to <span class="gradient-text-shimmer">Ship with Confidence</span></h2>
+      <h2 class="text-2xl font-bold tracking-tight sm:text-4xl">Everything You Need to <span class="hero-accent">Ship with Confidence</span></h2>
       <p class="mx-auto mt-4 max-w-2xl text-sm sm:text-lg text-text-muted">Six battle-tested checklists and guides in one package. Download, run through each item, and go from prototype to production.</p>
     </div>
     <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 stagger-c reveal">
       <div class="card-hover relative rounded-xl border border-brand-600 bg-brand-900/50 p-4 sm:p-6 transition-all">
-        <div class="mb-4 inline-flex rounded-lg bg-accent-purple/10 p-2.5" style="animation:scaleRotate 2.5s ease-in-out infinite"><svg class="h-5 w-5 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3a3 3 0 0 0-3 3v1H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2V6a3 3 0 0 0-3-3Z"/></svg></div>
+        <div class="mb-4 inline-flex rounded-lg bg-accent-purple/10 p-2.5"><svg class="h-5 w-5 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3a3 3 0 0 0-3 3v1H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2V6a3 3 0 0 0-3-3Z"/></svg></div>
         <h3 class="mb-2 font-semibold">Security Checklist</h3>
         <p class="mb-4 text-sm text-text-muted">28-item security audit covering auth, secrets management, API hardening, CORS, rate limiting, and OWASP Top 10 for AI apps.</p>
-        <div class="flex items-center gap-1.5 text-xs text-accent-cyan"><span style="animation:scalePulse 1.5s ease-in-out infinite"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>28 items</div>
+        <div class="flex items-center gap-1.5 text-xs text-accent-cyan"><span><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>28 items</div>
       </div>
       <div class="card-hover relative rounded-xl border border-brand-600 bg-brand-900/50 p-4 sm:p-6 transition-all">
-        <div class="mb-4 inline-flex rounded-lg bg-accent-purple/10 p-2.5" style="animation:scaleRotate 2.5s ease-in-out infinite 0.4s"><svg class="h-5 w-5 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/></svg></div>
+        <div class="mb-4 inline-flex rounded-lg bg-accent-purple/10 p-2.5"><svg class="h-5 w-5 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/></svg></div>
         <h3 class="mb-2 font-semibold">Deployment Checklist</h3>
         <p class="mb-4 text-sm text-text-muted">22-step deployment pipeline checklist: Docker, CI/CD, env vars, secrets, domain setup, SSL, monitoring, and rollback strategy.</p>
-        <div class="flex items-center gap-1.5 text-xs text-accent-cyan"><span style="animation:scalePulse 1.5s ease-in-out infinite 0.3s"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>22 items</div>
+        <div class="flex items-center gap-1.5 text-xs text-accent-cyan"><span><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>22 items</div>
       </div>
       <div class="card-hover relative rounded-xl border border-brand-600 bg-brand-900/50 p-4 sm:p-6 transition-all">
-        <div class="mb-4 inline-flex rounded-lg bg-accent-purple/10 p-2.5" style="animation:scaleRotate 2.5s ease-in-out infinite 0.8s"><svg class="h-5 w-5 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2.25a9 9 0 0 1 9 9c0 2.97-1.44 5.62-3.65 7.25l-.35.25v2.25a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1-.75-.75v-1.5H11.25v1.5a.75.75 0 0 1-.75.75H8.25a.75.75 0 0 1-.75-.75V18.5l-.35-.25A9 9 0 0 1 3 11.25a9 9 0 0 1 9-9Z"/></svg></div>
+        <div class="mb-4 inline-flex rounded-lg bg-accent-purple/10 p-2.5"><svg class="h-5 w-5 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 2.25a9 9 0 0 1 9 9c0 2.97-1.44 5.62-3.65 7.25l-.35.25v2.25a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1-.75-.75v-1.5H11.25v1.5a.75.75 0 0 1-.75.75H8.25a.75.75 0 0 1-.75-.75V18.5l-.35-.25A9 9 0 0 1 3 11.25a9 9 0 0 1 9-9Z"/></svg></div>
         <h3 class="mb-2 font-semibold">AI Testing Prompts</h3>
         <p class="mb-4 text-sm text-text-muted">15 battle-tested prompt templates for testing your app&rsquo;s edge cases, failure modes, and user scenarios before shipping.</p>
-        <div class="flex items-center gap-1.5 text-xs text-accent-cyan"><span style="animation:scalePulse 1.5s ease-in-out infinite 0.6s"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>15 items</div>
+        <div class="flex items-center gap-1.5 text-xs text-accent-cyan"><span><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>15 items</div>
       </div>
       <div class="card-hover relative rounded-xl border border-brand-600 bg-brand-900/50 p-4 sm:p-6 transition-all">
-        <div class="mb-4 inline-flex rounded-lg bg-accent-purple/10 p-2.5" style="animation:scaleRotate 2.5s ease-in-out infinite 1.2s"><svg class="h-5 w-5 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg></div>
+        <div class="mb-4 inline-flex rounded-lg bg-accent-purple/10 p-2.5"><svg class="h-5 w-5 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg></div>
         <h3 class="mb-2 font-semibold">Privacy Requirements</h3>
         <p class="mb-4 text-sm text-text-muted">GDPR &amp; CCPA compliance cheatsheet tailored for indie apps. Data mapping, consent flows, cookie banners, and privacy policy templates.</p>
-        <div class="flex items-center gap-1.5 text-xs text-accent-cyan"><span style="animation:scalePulse 1.5s ease-in-out infinite 0.9s"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>18 items</div>
+        <div class="flex items-center gap-1.5 text-xs text-accent-cyan"><span><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>18 items</div>
       </div>
       <div class="card-hover relative rounded-xl border border-brand-600 bg-brand-900/50 p-4 sm:p-6 transition-all">
-        <div class="mb-4 inline-flex rounded-lg bg-accent-purple/10 p-2.5" style="animation:scaleRotate 2.5s ease-in-out infinite 1.6s"><svg class="h-5 w-5 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605"/></svg></div>
+        <div class="mb-4 inline-flex rounded-lg bg-accent-purple/10 p-2.5"><svg class="h-5 w-5 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5m.75-9 3-3 2.148 2.148A12.061 12.061 0 0 1 16.5 7.605"/></svg></div>
         <h3 class="mb-2 font-semibold">MVP Health Audit</h3>
         <p class="mb-4 text-sm text-text-muted">Scorecard to grade your app across 5 dimensions: security, performance, UX, code quality, and deployment readiness.</p>
-        <div class="flex items-center gap-1.5 text-xs text-accent-cyan"><span style="animation:scalePulse 1.5s ease-in-out infinite 1.2s"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>25 items</div>
+        <div class="flex items-center gap-1.5 text-xs text-accent-cyan"><span><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>25 items</div>
       </div>
       <div class="card-hover relative rounded-xl border border-brand-600 bg-brand-900/50 p-4 sm:p-6 transition-all">
-        <div class="mb-4 inline-flex rounded-lg bg-accent-purple/10 p-2.5" style="animation:scaleRotate 2.5s ease-in-out infinite 2s"><svg class="h-5 w-5 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 12 3.269 3.126A59.768 59.768 0 0 1 21.485 12 59.77 59.77 0 0 1 3.27 20.876L5.999 12Zm0 0h7.5"/></svg></div>
+        <div class="mb-4 inline-flex rounded-lg bg-accent-purple/10 p-2.5"><svg class="h-5 w-5 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 12 3.269 3.126A59.768 59.768 0 0 1 21.485 12 59.77 59.77 0 0 1 3.27 20.876L5.999 12Zm0 0h7.5"/></svg></div>
         <h3 class="mb-2 font-semibold">Launch Checklist</h3>
         <p class="mb-4 text-sm text-text-muted">Pre-flight review before going live: domain &amp; DNS, backups, error tracking, payment tests, and a final go-live sequence.</p>
-        <div class="flex items-center gap-1.5 text-xs text-accent-cyan"><span style="animation:scalePulse 1.5s ease-in-out infinite 1.5s"><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>20 items</div>
+        <div class="flex items-center gap-1.5 text-xs text-accent-cyan"><span><svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></span>20 items</div>
       </div>
     </div>
     <div class="reveal mt-12 text-center">
-      <a href="kit.html" class="shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all h-9 gap-1.5 px-2.5 bg-accent-pink text-black hover:bg-accent-pink/90 glow-blue relative overflow-hidden inline-flex"><svg class="size-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Download the Full Package</a>
+      <a href="kit.html" class="btn-primary"><svg class="size-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> Download the Full Package</a>
     </div>
   </div>
 </section>
@@ -271,7 +364,7 @@
   <div class="mx-auto max-w-7xl">
     <div class="section-divider-line mb-12 sm:mb-16"></div>
     <div class="reveal mb-12 text-center">
-      <h2 class="text-2xl font-bold tracking-tight sm:text-4xl"><span class="gradient-text-shimmer">Latest</span> from the Blog</h2>
+      <h2 class="text-2xl font-bold tracking-tight sm:text-4xl"><span class="hero-accent">Latest</span> from the Blog</h2>
     </div>
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 stagger-c reveal">
       <div><div class="card-hover h-full"><a href="blog/vibe-coding-security.html" class="group block h-full rounded-xl border border-brand-600 bg-brand-800/50 p-6 transition-all"><span class="inline-flex items-center rounded-md border border-accent-purple/30 px-2.5 py-0.5 text-xs font-medium text-accent-purple mb-3">Security</span><h3 class="mb-2 font-semibold group-hover:text-accent-purple transition-colors">The Vibe Coder&rsquo;s Guide to Production Security</h3><p class="mb-4 text-sm text-text-muted">Every security vulnerability I&rsquo;ve seen in AI-built apps &mdash; and how to fix them before you ship.</p><div class="flex items-center justify-between text-xs text-text-muted"><span>Jul 20, 2026</span><span class="flex items-center gap-1 text-accent-purple group-hover:text-accent-pink transition-colors">Read <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></span></div></a></div></div>
@@ -280,7 +373,7 @@
       <div><div class="card-hover h-full"><a href="blog/mvp-health-audit-scorecard.html" class="group block h-full rounded-xl border border-brand-600 bg-brand-800/50 p-6 transition-all"><span class="inline-flex items-center rounded-md border border-accent-purple/30 px-2.5 py-0.5 text-xs font-medium text-accent-purple mb-3">Audit</span><h3 class="mb-2 font-semibold group-hover:text-accent-purple transition-colors">What We Look For in an MVP Health Audit</h3><p class="mb-4 text-sm text-text-muted">Inside our MVP Health Audit scorecard: the 5 dimensions we grade and why each one matters.</p><div class="flex items-center justify-between text-xs text-text-muted"><span>Jul 5, 2026</span><span class="flex items-center gap-1 text-accent-purple group-hover:text-accent-pink transition-colors">Read <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></span></div></a></div></div>
     </div>
     <div class="reveal mt-10 text-center">
-      <a href="blog.html" class="inline-flex items-center gap-2 text-sm text-accent-purple hover:text-accent-pink transition-colors">Read all posts <span class="inline-block" style="animation:floatRight 1.5s ease-in-out infinite"><svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></span></a>
+      <a href="blog.html" class="inline-flex items-center gap-2 text-sm text-accent-purple hover:text-accent-pink transition-colors">Read all posts <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
     </div>
   </div>
 </section>
@@ -289,31 +382,12 @@
 <section class="relative overflow-hidden px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
   <div class="mx-auto max-w-7xl">
     <div class="section-divider-line mb-12 sm:mb-16"></div>
-    <div class="reveal relative overflow-hidden rounded-2xl border border-brand-600 bg-gradient-to-br from-accent-purple/10 to-accent-pink/10 px-4 py-12 text-center sm:px-12 sm:py-16">
-      <div class="pointer-events-none absolute inset-0">
-        <div class="pointer-events-none absolute" style="top:20%;left:10%;animation:float 4s ease-in-out infinite">
-          <div class="flex items-center justify-center rounded-xl font-bold leading-none select-none w-8 h-8 sm:w-10 sm:h-10" style="background:linear-gradient(135deg,#2d9cdbdd,#2d9cdb66);font-size:14px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.3)">&lt;/&gt;</div>
-        </div>
-        <div class="pointer-events-none absolute" style="top:60%;right:15%;animation:float 5s ease-in-out infinite 0.5s">
-          <div class="flex items-center justify-center rounded-xl font-bold leading-none select-none w-8 h-8 sm:w-10 sm:h-10" style="background:linear-gradient(135deg,#6bb8ffdd,#6bb8ff66);font-size:14px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.3)">{}</div>
-        </div>
-        <div class="pointer-events-none absolute" style="top:30%;right:20%;animation:float 6s ease-in-out infinite 1s">
-          <div class="flex items-center justify-center rounded-xl font-bold leading-none select-none w-8 h-8 sm:w-10 sm:h-10" style="background:linear-gradient(135deg,#0177d9dd,#0177d966);font-size:14px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.3)">()</div>
-        </div>
-        <div class="pointer-events-none absolute" style="bottom:25%;left:20%;animation:float 4.5s ease-in-out infinite 1.5s">
-          <div class="flex items-center justify-center rounded-xl font-bold leading-none select-none w-8 h-8 sm:w-10 sm:h-10" style="background:linear-gradient(135deg,#2d9cdbdd,#2d9cdb66);font-size:14px;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.3)">[]</div>
-        </div>
-      </div>
-      <div class="pointer-events-none absolute -right-20 -top-20 h-60 w-60 rounded-full bg-accent-pink/20 blur-[100px]" style="animation:scalePulse 4s ease-in-out infinite"></div>
-      <div class="pointer-events-none absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-accent-purple/20 blur-[100px]" style="animation:scalePulse 5s ease-in-out infinite 1s"></div>
+    <div class="reveal relative overflow-hidden rounded-xl border border-brand-600 bg-brand-800/30 px-4 py-12 text-center sm:px-12 sm:py-16">
       <div class="relative">
-        <h2 class="text-xl sm:text-4xl font-bold tracking-tight">
-          <span class="inline-block">Your App Is Ready. </span>
-          <span class="gradient-text-shimmer inline-block">Make It Production-Ready.</span>
-        </h2>
-        <p class="mx-auto mt-4 max-w-xl text-lg text-text-muted">Get your AI-built app production-ready. Our team handles security audits, CI/CD setup, and deployment &mdash; so you can focus on building.</p>
+        <h2 class="text-2xl font-bold tracking-tight sm:text-4xl">Your App Is Ready. <span class="hero-accent">Make It Production-Ready.</span></h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg text-text-muted">Our team handles security audits, CI/CD setup, and deployment &mdash; so you can focus on building.</p>
         <div class="mt-8">
-          <a href="service.html" class="shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all h-9 gap-1.5 px-2.5 bg-accent-pink text-black hover:bg-accent-pink/90 glow-blue relative overflow-hidden inline-flex"><svg class="size-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg> Book a Free Discovery Call</a>
+          <a href="contact.html" class="btn-primary btn-lg">Book a Free Discovery Call</a>
         </div>
       </div>
     </div>
@@ -323,45 +397,48 @@
 </main>
 
 <!-- FOOTER -->
-<footer class="border-t border-brand-600/50 bg-brand-900">
-  <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-    <div class="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="space-y-3">
+<footer class="site-footer border-t border-header bg-brand-900">
+  <div class="mx-auto max-w-7xl px-4 pb-6 pt-16 sm:px-6 sm:py-12 lg:px-8">
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div>
         <a href="/" class="flex items-center gap-2">
-          <div class="relative h-7 w-7 overflow-hidden rounded-lg"><img src="img/logo.jpeg" alt="Scale200" class="object-contain w-full h-full" /></div>
+          <div class="relative h-8 w-8 overflow-hidden rounded-lg"><img src="img/logo.jpeg" alt="Scale200 logo" class="h-full w-full object-contain" /></div>
           <span class="text-base font-bold">Scale200</span>
         </a>
-        <p class="text-sm text-text-muted">From Vibe-Coded to Production-Ready. Production readiness services for AI-built apps.</p>
+        <p class="mt-3 text-sm leading-relaxed text-text-muted">Production readiness for AI-built apps. We take vibe-coded apps from prototype to secure, scalable, production-ready.</p>
       </div>
       <div>
-        <h3 class="mb-3 text-sm font-semibold">Pages</h3>
+        <h3 class="mb-4 text-sm font-semibold">Pages</h3>
         <ul class="space-y-2">
-          <li><a href="/" class="text-sm text-text-muted transition-colors hover:text-foreground">Home</a></li>
-          <li><a href="kit.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Kit</a></li>
-          <li><a href="service.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Service</a></li>
-          <li><a href="pricing.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Pricing</a></li>
-          <li><a href="blog.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Blog</a></li>
-          <li><a href="contact.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Contact</a></li>
+          <li><a href="/" class="footer-link">Home</a></li>
+          <li><a href="kit.html" class="footer-link">Kit</a></li>
+          <li><a href="service.html" class="footer-link">Service</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h3 class="mb-3 text-sm font-semibold">Resources</h3>
+        <h3 class="mb-4 text-sm font-semibold">Resources</h3>
         <ul class="space-y-2">
-          <li><a href="service.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Production Audit</a></li>
-          <li><a href="kit.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Free Kit</a></li>
-          <li><a href="service.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Production Audit</a></li>
-          <li><a href="blog.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Blog</a></li>
+          <li><a href="kit.html" class="footer-link">Production Readiness Kit</a></li>
+          <li><a href="service.html" class="footer-link">Production Audit</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
         </ul>
       </div>
       <div>
-        <h3 class="mb-3 text-sm font-semibold">Company</h3>
+        <h3 class="mb-4 text-sm font-semibold">Company</h3>
         <ul class="space-y-2">
-          <li><a href="contact.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Contact</a></li>
-          <li><a href="pricing.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Pricing</a></li>
+          <li><a href="service.html" class="footer-link">Our Service</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
         </ul>
       </div>
     </div>
-    <div class="mt-10 border-t border-brand-600/50 pt-6 text-center text-sm text-text-muted">&copy; 2026 Scale200. All rights reserved.</div>
+    <div class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-header pt-6 text-sm text-text-muted sm:flex-row">
+      <p>&copy; 2026 Scale200. All rights reserved.</p>
+      <p class="flex items-center gap-1.5">Powered by <a href="https://leoconsulting.biz/" target="_blank" rel="noopener noreferrer" class="footer-link footer-leo">Leo Consulting</a></p>
+    </div>
   </div>
 </footer>
 

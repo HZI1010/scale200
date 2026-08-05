@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark h-full antialiased">
+<html lang="en" class="h-full antialiased">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,36 +9,36 @@
 </head>
 <body class="flex min-h-full flex-col bg-background text-foreground">
 
-<header id="header" class="sticky top-0 z-50 w-full transition-all duration-300 border-b border-transparent bg-brand-900/50 backdrop-blur-sm">
-  <div class="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-    <a href="/" class="flex items-center gap-2 shrink-0">
-      <div class="relative h-8 w-8 overflow-hidden rounded-lg"><img src="img/logo.jpeg" alt="Scale200" class="object-contain w-full h-full" /></div>
+<header id="header" class="sticky top-0 z-50 w-full border-b border-header backdrop-blur-sm">
+  <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+    <a href="/" class="flex shrink-0 items-center gap-2" aria-label="Scale200 - Home">
+      <div class="relative h-8 w-8 overflow-hidden rounded-lg"><img src="img/logo.jpeg" alt="Scale200 logo" class="h-full w-full object-contain" /></div>
       <span class="text-lg font-bold tracking-tight">Scale200</span>
     </a>
-    <nav class="hidden items-center gap-1.5 md:flex">
-      <a href="/" class="relative rounded-full border border-transparent text-text-muted hover:border-white/10 hover:bg-white/[0.04] hover:text-foreground px-4 py-1.5 text-sm transition-all duration-300">Home</a>
-      <a href="kit.html" class="relative rounded-full border border-transparent text-text-muted hover:border-white/10 hover:bg-white/[0.04] hover:text-foreground px-4 py-1.5 text-sm transition-all duration-300">Kit</a>
-      <a href="service.html" class="relative rounded-full border border-transparent text-text-muted hover:border-white/10 hover:bg-white/[0.04] hover:text-foreground px-4 py-1.5 text-sm transition-all duration-300">Service</a>
-      <a href="pricing.html" class="relative rounded-full border border-accent-pink/30 bg-accent-pink/10 text-accent-pink px-4 py-1.5 text-sm transition-all duration-300">Pricing</a>
-      <a href="blog.html" class="relative rounded-full border border-transparent text-text-muted hover:border-white/10 hover:bg-white/[0.04] hover:text-foreground px-4 py-1.5 text-sm transition-all duration-300">Blog</a>
-      <a href="contact.html" class="relative rounded-full border border-transparent text-text-muted hover:border-white/10 hover:bg-white/[0.04] hover:text-foreground px-4 py-1.5 text-sm transition-all duration-300">Contact</a>
+    <nav class="hidden items-center gap-6 md:flex" aria-label="Main navigation">
+      <a href="/" class="nav-link">Home</a>
+      <a href="kit.html" class="nav-link">Kit</a>
+      <a href="service.html" class="nav-link">Service</a>
+      <a href="pricing.html" class="nav-link active">Pricing</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </nav>
     <div class="hidden md:block">
-      <a href="kit.html" class="shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all h-7 gap-1 px-2.5 text-[0.8rem] bg-accent-pink text-black hover:bg-accent-pink/90 glow-blue relative overflow-hidden inline-flex">Get the Kit</a>
+      <a href="contact.html" class="btn-primary">Book a Call</a>
     </div>
-    <button id="menu-btn" class="md:hidden" aria-label="Toggle menu">
-      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    <button id="menu-btn" class="menu-btn md:hidden" aria-label="Toggle menu" aria-controls="mobile-menu" aria-expanded="false">
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M4 12h16M4 17h16"/></svg>
     </button>
   </div>
-  <div id="mobile-menu" class="mobile-menu border-t border-brand-600/50 bg-brand-900/95 backdrop-blur-xl px-4 pb-6 pt-4 md:hidden">
-    <nav class="flex flex-col gap-2">
-      <a href="/" class="relative rounded-full border border-transparent text-text-muted hover:border-white/10 px-4 py-1.5 text-sm">Home</a>
-      <a href="kit.html" class="relative rounded-full border border-transparent text-text-muted hover:border-white/10 px-4 py-1.5 text-sm">Kit</a>
-      <a href="service.html" class="relative rounded-full border border-transparent text-text-muted hover:border-white/10 px-4 py-1.5 text-sm">Service</a>
-      <a href="pricing.html" class="relative rounded-full border border-accent-pink/30 bg-accent-pink/10 text-accent-pink px-4 py-1.5 text-sm">Pricing</a>
-      <a href="blog.html" class="relative rounded-full border border-transparent text-text-muted hover:border-white/10 px-4 py-1.5 text-sm">Blog</a>
-      <a href="contact.html" class="relative rounded-full border border-transparent text-text-muted hover:border-white/10 px-4 py-1.5 text-sm">Contact</a>
-      <a href="kit.html" class="mt-2 shrink-0 w-full items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all h-7 gap-1 px-2.5 text-[0.8rem] bg-accent-pink text-black hover:bg-accent-pink/90 inline-flex">Get the Kit</a>
+  <div id="mobile-menu" class="mobile-menu px-4 pb-6 pt-4 md:hidden">
+    <nav class="flex flex-col gap-1" aria-label="Mobile navigation">
+      <a href="/" class="mobile-nav-link">Home</a>
+      <a href="kit.html" class="mobile-nav-link">Kit</a>
+      <a href="service.html" class="mobile-nav-link">Service</a>
+      <a href="pricing.html" class="mobile-nav-link active">Pricing</a>
+      <a href="blog.html" class="mobile-nav-link">Blog</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="contact.html" class="btn-primary mt-3">Book a Call</a>
     </nav>
   </div>
 </header>
@@ -49,7 +49,7 @@
   <div class="mx-auto max-w-7xl">
     <div class="section-divider-line mb-12 sm:mb-16"></div>
     <div class="reveal mx-auto max-w-3xl text-center">
-      <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Simple Pricing for <span class="gradient-text-shimmer">Shipping Confidence</span></h1>
+      <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Simple Pricing for <span class="hero-accent">Shipping Confidence</span></h1>
       <p class="mt-4 text-lg text-text-muted">Start with the free kit. Upgrade when you need hands-on help.</p>
     </div>
   </div>
@@ -71,11 +71,11 @@
           <li class="flex items-start gap-3"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm">Privacy cheatsheet</span></li>
           <li class="flex items-start gap-3"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm">MVP Health Audit scorecard</span></li>
         </ul>
-        <a href="kit.html"><span class="shrink-0 w-full items-center justify-center rounded-lg border bg-clip-padding text-sm font-medium whitespace-nowrap transition-all h-7 gap-1 px-2.5 text-[0.8rem] border-accent-purple text-accent-purple hover:bg-accent-purple/10 bg-background inline-flex">Download Free</span></a>
+        <a href="kit.html" class="btn-secondary w-full">Download Free</a>
       </div>
       <!-- Pro -->
       <div class="card-hover relative flex flex-col rounded-2xl border border-accent-pink/50 bg-gradient-to-b from-accent-pink/5 to-accent-purple/5 p-8 transition-shadow shadow-lg shadow-accent-pink/5">
-        <div class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent-pink px-4 py-1 text-xs font-semibold text-black -m-1">Most Popular</div>
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent-pink px-4 py-1 text-xs font-semibold text-white -m-1">Most Popular</div>
         <div class="mb-6"><h2 class="text-xl font-bold">Pro</h2><p class="mt-1 text-sm text-text-muted">One-time hands-on production audit.</p></div>
         <div class="mb-6"><span class="text-4xl font-bold">$499</span><span class="ml-1 text-sm text-text-muted">one-time</span></div>
         <ul class="mb-8 flex-1 space-y-3">
@@ -86,7 +86,7 @@
           <li class="flex items-start gap-3"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm">Personalized audit report</span></li>
           <li class="flex items-start gap-3"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm">30-minute consultation call</span></li>
         </ul>
-        <a href="contact.html"><span class="shrink-0 w-full items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all h-7 gap-1 px-2.5 text-[0.8rem] bg-accent-pink text-black hover:bg-accent-pink/90 inline-flex">Book an Audit</span></a>
+        <a href="contact.html" class="btn-primary w-full">Book an Audit</a>
       </div>
       <!-- Enterprise -->
       <div class="card-hover relative flex flex-col rounded-2xl border border-brand-600 bg-brand-800/50 p-8 transition-shadow">
@@ -100,7 +100,7 @@
           <li class="flex items-start gap-3"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm">Ongoing production support</span></li>
           <li class="flex items-start gap-3"><svg class="mt-0.5 h-4 w-4 shrink-0 text-accent-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span class="text-sm">Priority response (24h SLA)</span></li>
         </ul>
-        <a href="contact.html"><span class="shrink-0 w-full items-center justify-center rounded-lg border bg-clip-padding text-sm font-medium whitespace-nowrap transition-all h-7 gap-1 px-2.5 text-[0.8rem] border-accent-purple text-accent-purple hover:bg-accent-purple/10 bg-background inline-flex">Contact Us</span></a>
+        <a href="contact.html" class="btn-secondary w-full">Contact Us</a>
       </div>
     </div>
   </div>
@@ -108,18 +108,48 @@
 
 </main>
 
-<footer class="border-t border-brand-600/50 bg-brand-900">
-  <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-    <div class="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="space-y-3">
-        <a href="/" class="flex items-center gap-2"><div class="relative h-7 w-7 overflow-hidden rounded-lg"><img src="img/logo.jpeg" alt="Scale200" class="object-contain w-full h-full" /></div><span class="text-base font-bold">Scale200</span></a>
-        <p class="text-sm text-text-muted">From Vibe-Coded to Production-Ready. The production readiness kit for vibe-coded apps.</p>
+<footer class="site-footer border-t border-header bg-brand-900">
+  <div class="mx-auto max-w-7xl px-4 pb-6 pt-16 sm:px-6 sm:py-12 lg:px-8">
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <a href="/" class="flex items-center gap-2">
+          <div class="relative h-8 w-8 overflow-hidden rounded-lg"><img src="img/logo.jpeg" alt="Scale200 logo" class="h-full w-full object-contain" /></div>
+          <span class="text-base font-bold">Scale200</span>
+        </a>
+        <p class="mt-3 text-sm leading-relaxed text-text-muted">Production readiness for AI-built apps. We take vibe-coded apps from prototype to secure, scalable, production-ready.</p>
       </div>
-      <div><h3 class="mb-3 text-sm font-semibold">Pages</h3><ul class="space-y-2"><li><a href="/" class="text-sm text-text-muted transition-colors hover:text-foreground">Home</a></li><li><a href="kit.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Kit</a></li><li><a href="service.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Service</a></li><li><a href="pricing.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Pricing</a></li><li><a href="blog.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Blog</a></li><li><a href="contact.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Contact</a></li></ul></div>
-      <div><h3 class="mb-3 text-sm font-semibold">Resources</h3><ul class="space-y-2"><li><a href="kit.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Production Readiness Kit</a></li><li><a href="service.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Production Audit</a></li><li><a href="blog.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Blog</a></li></ul></div>
-      <div><h3 class="mb-3 text-sm font-semibold">Company</h3><ul class="space-y-2"><li><a href="contact.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Contact</a></li><li><a href="pricing.html" class="text-sm text-text-muted transition-colors hover:text-foreground">Pricing</a></li></ul></div>
+      <div>
+        <h3 class="mb-4 text-sm font-semibold">Pages</h3>
+        <ul class="space-y-2">
+          <li><a href="/" class="footer-link">Home</a></li>
+          <li><a href="kit.html" class="footer-link">Kit</a></li>
+          <li><a href="service.html" class="footer-link">Service</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="mb-4 text-sm font-semibold">Resources</h3>
+        <ul class="space-y-2">
+          <li><a href="kit.html" class="footer-link">Production Readiness Kit</a></li>
+          <li><a href="service.html" class="footer-link">Production Audit</a></li>
+          <li><a href="pricing.html" class="footer-link">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="mb-4 text-sm font-semibold">Company</h3>
+        <ul class="space-y-2">
+          <li><a href="service.html" class="footer-link">Our Service</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+          <li><a href="blog.html" class="footer-link">Blog</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="mt-10 border-t border-brand-600/50 pt-6 text-center text-sm text-text-muted">&copy; 2026 Scale200. All rights reserved.</div>
+    <div class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-header pt-6 text-sm text-text-muted sm:flex-row">
+      <p>&copy; 2026 Scale200. All rights reserved.</p>
+      <p class="flex items-center gap-1.5">Powered by <a href="https://leoconsulting.biz/" target="_blank" rel="noopener noreferrer" class="footer-link footer-leo">Leo Consulting</a></p>
+    </div>
   </div>
 </footer>
 
