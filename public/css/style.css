@@ -2895,6 +2895,7 @@ html { color-scheme: light; }
 /* --- Header on light --- */
 #header { background-color: rgba(255, 255, 255, 0.85); }
 #header.scrolled { background-color: rgba(255, 255, 255, 0.96); box-shadow: 0 1px 8px rgba(16, 42, 67, 0.08); }
+header#header.scrolled { background-color: rgba(255, 255, 255, 0.96) !important; border-bottom-color: var(--border) !important; box-shadow: 0 1px 8px rgba(16, 42, 67, 0.08) !important; }
 .menu-btn:hover { background-color: rgba(16, 42, 67, 0.06); }
 .mobile-nav-link:hover { background-color: rgba(16, 42, 67, 0.05); }
 .mobile-nav-link.active { background-color: rgba(17, 121, 175, 0.12); }
