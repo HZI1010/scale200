@@ -2800,7 +2800,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .hero-ill .ill-hub-ring { transform-box: fill-box; transform-origin: center; animation: ill-spin 16s linear infinite; }
 .hero-ill .ill-check { stroke-dasharray: 24; stroke-dashoffset: 24; animation: ill-draw 0.7s ease-out 0.3s forwards; }
 .hero-ill .ill-packet {
-  offset-path: path("M326 270 L402 270");
+  offset-path: path("M207 270 L284 270");
   animation: ill-packet 2.6s ease-in-out infinite;
 }
 .hero-ill .ill-dot.pending { animation: ill-blink 2.8s ease-in-out infinite; }
