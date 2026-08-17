@@ -2799,13 +2799,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media (min-width: 64rem) {
   .hero-ill-wrap {
     position: absolute;
-    top: 50%;
+    top: 0;
+    bottom: 0;
     right: 4rem;
-    transform: translateY(-50%);
+    transform: translateY(-3rem);
     width: 58%;
     max-width: 70rem;
     z-index: 0;
   }
+  .hero-ill { height: 100%; }
 }
 @media (max-width: 63.999rem) {
   .hero-ill .ill-hide-sm { display: none; }
