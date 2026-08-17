@@ -67,85 +67,188 @@
       </div>
 
       <div class="w-full">
-        <svg class="hero-ill" viewBox="0 0 840 540" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flat illustration: engineering gears and a security shield under a white rocket lifting off with an amber flame toward a blue cloud marked with a check, on a soft blue panel.">
-          <!-- Backdrop -->
-          <rect x="70" y="40" width="700" height="460" rx="44" fill="#eef6fb" stroke="#d9ecf9" stroke-width="2"/>
+        <svg class="hero-ill" viewBox="0 0 840 540" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Connected production infrastructure: a dashboard app window at the center with API, Cloud and Database modules above, Cache and Storage on the right, CI/CD, Monitoring and Security below, and a code editor panel overlapping the dashboard. Thin lines connect every module into one system.">
+          <defs>
+            <radialGradient id="bg-blend" cx="0.6" cy="0.45" r="0.78" gradientUnits="objectBoundingBox">
+              <stop offset="0" stop-color="#eaf5fa" stop-opacity="0.95"/>
+              <stop offset="0.5" stop-color="#eaf5fa" stop-opacity="0.5"/>
+              <stop offset="1" stop-color="#eaf5fa" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="chart-fill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#6bb8ff" stop-opacity="0.3"/>
+              <stop offset="1" stop-color="#6bb8ff" stop-opacity="0"/>
+            </linearGradient>
+            <filter id="soft-shadow" x="-30%" y="-40%" width="160%" height="180%">
+              <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#17324d" flood-opacity="0.12"/>
+            </filter>
+            <filter id="soft-shadow-sm" x="-30%" y="-40%" width="160%" height="180%">
+              <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#17324d" flood-opacity="0.08"/>
+            </filter>
+          </defs>
 
-          <!-- Engineering gears -->
-          <g transform="translate(200,452)">
-            <g fill="#17233f">
-              <rect x="-5.5" y="-50" width="11" height="22" rx="5" transform="rotate(0)"/>
-              <rect x="-5.5" y="-50" width="11" height="22" rx="5" transform="rotate(45)"/>
-              <rect x="-5.5" y="-50" width="11" height="22" rx="5" transform="rotate(90)"/>
-              <rect x="-5.5" y="-50" width="11" height="22" rx="5" transform="rotate(135)"/>
-              <rect x="-5.5" y="-50" width="11" height="22" rx="5" transform="rotate(180)"/>
-              <rect x="-5.5" y="-50" width="11" height="22" rx="5" transform="rotate(225)"/>
-              <rect x="-5.5" y="-50" width="11" height="22" rx="5" transform="rotate(270)"/>
-              <rect x="-5.5" y="-50" width="11" height="22" rx="5" transform="rotate(315)"/>
-            </g>
-            <circle r="38" fill="#17233f"/>
-            <circle r="26" fill="#eef6fb"/>
-            <circle r="5" fill="#2d9cdb"/>
-          </g>
-          <g transform="translate(268,470)" class="ill-gear">
-            <g fill="#17233f">
-              <rect x="-4.5" y="-36" width="9" height="16" rx="4" transform="rotate(0)"/>
-              <rect x="-4.5" y="-36" width="9" height="16" rx="4" transform="rotate(45)"/>
-              <rect x="-4.5" y="-36" width="9" height="16" rx="4" transform="rotate(90)"/>
-              <rect x="-4.5" y="-36" width="9" height="16" rx="4" transform="rotate(135)"/>
-              <rect x="-4.5" y="-36" width="9" height="16" rx="4" transform="rotate(180)"/>
-              <rect x="-4.5" y="-36" width="9" height="16" rx="4" transform="rotate(225)"/>
-              <rect x="-4.5" y="-36" width="9" height="16" rx="4" transform="rotate(270)"/>
-              <rect x="-4.5" y="-36" width="9" height="16" rx="4" transform="rotate(315)"/>
-            </g>
-            <circle r="28" fill="#17233f"/>
-            <circle r="18" fill="#eef6fb"/>
-            <circle r="4" fill="#2d9cdb"/>
+          <!-- Soft blend into the page background -->
+          <rect x="0" y="0" width="840" height="540" fill="url(#bg-blend)"/>
+
+          <!-- Subtle server / infrastructure racks in the background -->
+          <g class="ill-hide-sm">
+            <rect x="600" y="120" width="176" height="230" rx="20" fill="#eaf5fa" stroke="#d9ecf9" stroke-width="1.5"/>
+            <line x1="612" y1="152" x2="764" y2="152" stroke="#d9ecf9" stroke-width="1.5"/>
+            <line x1="612" y1="178" x2="764" y2="178" stroke="#d9ecf9" stroke-width="1.5"/>
+            <line x1="612" y1="204" x2="764" y2="204" stroke="#d9ecf9" stroke-width="1.5"/>
+            <rect x="240" y="360" width="180" height="140" rx="20" fill="#eaf5fa" stroke="#d9ecf9" stroke-width="1.5"/>
+            <line x1="252" y1="392" x2="408" y2="392" stroke="#d9ecf9" stroke-width="1.5"/>
+            <line x1="252" y1="418" x2="408" y2="418" stroke="#d9ecf9" stroke-width="1.5"/>
+            <line x1="252" y1="444" x2="408" y2="444" stroke="#d9ecf9" stroke-width="1.5"/>
           </g>
 
-          <!-- Security shield -->
-          <g transform="translate(330,300)">
-            <path d="M0 -64 L50 -40 V8 C50 46 26 78 0 86 C-26 78 -50 46 -50 8 V-40 Z" fill="#1179af"/>
-            <path d="M-22 -3 L-8 11 L24 -22" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <!-- Top modules: API, Cloud, Database -->
+          <g>
+            <rect x="237" y="88" width="96" height="64" rx="14" fill="#ffffff" stroke="#d9ecf9" stroke-width="1.5" filter="url(#soft-shadow-sm)"/>
+            <path d="M276 104 L270 110 L276 116" stroke="#1179af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M294 104 L300 110 L294 116" stroke="#1179af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M289 102 L282 119" stroke="#1179af" stroke-width="2.5" stroke-linecap="round"/>
+            <text x="285" y="134" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="700" fill="#17233f">API</text>
+          </g>
+          <g>
+            <rect x="497" y="60" width="96" height="64" rx="14" fill="#ffffff" stroke="#d9ecf9" stroke-width="1.5" filter="url(#soft-shadow-sm)"/>
+            <circle cx="536" cy="88" r="7" fill="#1179af"/>
+            <circle cx="549" cy="84" r="10" fill="#1179af"/>
+            <circle cx="558" cy="89" r="7" fill="#1179af"/>
+            <rect x="531" y="88" width="31" height="9" rx="4.5" fill="#1179af"/>
+            <text x="545" y="116" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="700" fill="#17233f">Cloud</text>
+          </g>
+          <g class="ill-hide-sm">
+            <rect x="707" y="88" width="96" height="64" rx="14" fill="#ffffff" stroke="#d9ecf9" stroke-width="1.5" filter="url(#soft-shadow-sm)"/>
+            <ellipse cx="755" cy="106" rx="12" ry="4.5" fill="#1179af"/>
+            <path d="M743 106 V120 a12 4.5 0 0 0 24 0 V106" fill="#1179af"/>
+            <ellipse cx="755" cy="120" rx="12" ry="4.5" fill="#2d9cdb"/>
+            <text x="755" y="134" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="700" fill="#17233f">Database</text>
           </g>
 
-          <!-- Rocket launch -->
-          <g transform="translate(470,245)">
-            <path d="M-18 76 C-18 114 -11 134 0 146 C11 134 18 114 18 76 Q0 90 -18 76 Z" fill="#e5a944"/>
-            <path d="M-8 80 C-8 108 -3 122 0 130 C3 122 8 108 8 80 Q0 88 -8 80 Z" fill="#ffffff"/>
-            <path d="M-28 70 L-28 -52 Q-28 -102 0 -118 Q28 -102 28 -52 L28 70 Q28 86 0 86 Q-28 86 -28 70 Z" fill="#ffffff"/>
-            <path d="M-16 -50 Q-16 -78 0 -94 Q16 -78 16 -50 Z" fill="#6bb8ff"/>
-            <circle cx="0" cy="-8" r="13" fill="#1179af"/>
-            <circle cx="-5" cy="-13" r="4" fill="#ffffff" opacity="0.8"/>
-            <path d="M-28 28 C-52 48 -64 74 -64 92 L-28 78 Z" fill="#2d9cdb"/>
-            <path d="M28 28 C52 48 64 74 64 92 L28 78 Z" fill="#1179af"/>
-            <rect x="-28" y="44" width="56" height="10" rx="5" fill="#2d9cdb"/>
+          <!-- Right modules: Cache, Storage -->
+          <g class="ill-hide-sm">
+            <rect x="744" y="253" width="96" height="64" rx="14" fill="#ffffff" stroke="#d9ecf9" stroke-width="1.5" filter="url(#soft-shadow-sm)"/>
+            <path d="M791 267 L786 279 L791 279 L789 289 L796 277 L791 277 Z" fill="#1179af"/>
+            <text x="792" y="299" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="700" fill="#17233f">Cache</text>
+          </g>
+          <g class="ill-hide-sm">
+            <rect x="740" y="398" width="96" height="64" rx="14" fill="#ffffff" stroke="#d9ecf9" stroke-width="1.5" filter="url(#soft-shadow-sm)"/>
+            <rect x="777" y="416" width="22" height="16" rx="6" fill="#1179af"/>
+            <circle cx="788" cy="424" r="4.5" fill="#ffffff"/>
+            <text x="788" y="444" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="700" fill="#17233f">Storage</text>
           </g>
 
-          <!-- Deployed cloud with check -->
-          <g transform="translate(655,150)">
-            <circle cx="-42" cy="6" r="24" fill="#2d9cdb"/>
-            <circle cx="0" cy="-18" r="32" fill="#2d9cdb"/>
-            <circle cx="42" cy="6" r="24" fill="#2d9cdb"/>
-            <rect x="-58" y="6" width="116" height="36" rx="18" fill="#2d9cdb"/>
-            <path d="M-20 22 L-4 38 L22 6" stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <!-- Bottom modules: CI/CD, Monitoring, Security -->
+          <g class="ill-hide-sm">
+            <rect x="217" y="443" width="96" height="64" rx="14" fill="#ffffff" stroke="#d9ecf9" stroke-width="1.5" filter="url(#soft-shadow-sm)"/>
+            <path d="M258 461 a10 10 0 0 1 14 -8" stroke="#1179af" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M272 451 L278 452 L274 457 Z" fill="#1179af"/>
+            <path d="M272 463 a10 10 0 0 1 -14 8" stroke="#1179af" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M258 473 L252 472 L256 467 Z" fill="#1179af"/>
+            <text x="265" y="489" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="700" fill="#17233f">CI/CD</text>
+          </g>
+          <g class="ill-hide-sm">
+            <rect x="512" y="478" width="96" height="64" rx="14" fill="#ffffff" stroke="#d9ecf9" stroke-width="1.5" filter="url(#soft-shadow-sm)"/>
+            <path d="M530 502 L540 502 L545 494 L551 510 L557 498 L564 498" stroke="#1179af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <text x="560" y="524" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="700" fill="#17233f">Monitoring</text>
+          </g>
+          <g>
+            <rect x="737" y="488" width="96" height="64" rx="14" fill="#ffffff" stroke="#d9ecf9" stroke-width="1.5" filter="url(#soft-shadow-sm)"/>
+            <path d="M785 497 L795 505 V513 C795 521 790 525 785 527 C780 525 775 521 775 513 V505 Z" fill="#1179af"/>
+            <path d="M781 512 L784 515 L789 507" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <text x="785" y="534" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="700" fill="#17233f">Security</text>
           </g>
 
-          <!-- Sparkles -->
-          <path d="M150 288 L154 298 L164 302 L154 306 L150 316 L146 306 L136 302 L146 298 Z" fill="#e5a944"/>
-          <path d="M430 200 L432 207 L439 209 L432 211 L430 218 L428 211 L421 209 L428 207 Z" fill="#6bb8ff"/>
-          <path d="M690 112 L692 119 L699 121 L692 123 L690 130 L688 123 L681 121 L688 119 Z" fill="#e5a944" opacity="0.85"/>
+          <!-- Central app / dashboard window -->
+          <g>
+            <rect x="400" y="200" width="320" height="260" rx="16" fill="#ffffff" stroke="#d9ecf9" stroke-width="1.5" filter="url(#soft-shadow)"/>
+            <path d="M416 200 H704 A16 16 0 0 1 720 216 V242 H400 V216 A16 16 0 0 1 416 200 Z" fill="#f4f9fc"/>
+            <circle cx="423" cy="221" r="3.5" fill="#cfe4f2"/>
+            <circle cx="434" cy="221" r="3.5" fill="#cfe4f2"/>
+            <circle cx="445" cy="221" r="3.5" fill="#cfe4f2"/>
+            <text x="466" y="226" font-family="'Segoe UI', system-ui, sans-serif" font-size="12.5" font-weight="700" fill="#17233f">Production overview</text>
+            <rect x="676" y="209" width="36" height="22" rx="11" fill="#e8f9f1" stroke="#bfe9d7" stroke-width="1"/>
+            <text x="694" y="224" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#0f9d6e" letter-spacing="0.06em">LIVE</text>
 
-          <!-- Living dots -->
-          <circle class="ill-dot ready" cx="560" cy="150" r="4" fill="#34d399"/>
-          <circle class="ill-dot pending" cx="490" cy="400" r="4" fill="#6bb8ff"/>
+            <rect x="416" y="258" width="168" height="92" rx="10" fill="#f7fbfe" stroke="#e4f1f8" stroke-width="1"/>
+            <text x="424" y="276" font-family="'Segoe UI', system-ui, sans-serif" font-size="9.5" font-weight="600" fill="#7a8ba6">Traffic</text>
+            <path d="M430 340 L448 330 L466 334 L484 316 L502 324 L520 306 L538 312 L556 292 L574 300 L592 282 L592 340 Z" fill="url(#chart-fill)"/>
+            <path d="M430 340 L448 330 L466 334 L484 316 L502 324 L520 306 L538 312 L556 292 L574 300 L592 282" stroke="#1179af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle class="ill-dot ready" cx="592" cy="282" r="3" fill="#34d399"/>
 
-          <!-- Subtle decor -->
-          <circle cx="150" cy="170" r="10" fill="none" stroke="#2d9cdb" stroke-width="3" opacity="0.35"/>
-          <circle cx="240" cy="380" r="6" fill="#6bb8ff" opacity="0.45"/>
-          <circle cx="700" cy="330" r="7" fill="#2d9cdb" opacity="0.35"/>
-          <circle cx="120" cy="220" r="5" fill="#6bb8ff" opacity="0.5"/>
-          <circle cx="770" cy="210" r="6" fill="#6bb8ff" opacity="0.4"/>
+            <rect x="416" y="358" width="80" height="52" rx="10" fill="#ffffff" stroke="#e4f1f8" stroke-width="1"/>
+            <text x="456" y="380" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="800" fill="#1179af">99.9%</text>
+            <text x="456" y="399" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="600" fill="#7a8ba6">Uptime</text>
+            <rect x="504" y="358" width="80" height="52" rx="10" fill="#ffffff" stroke="#e4f1f8" stroke-width="1"/>
+            <text x="544" y="380" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="800" fill="#1179af">84ms</text>
+            <text x="544" y="399" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="600" fill="#7a8ba6">P95 latency</text>
+
+            <rect x="416" y="418" width="288" height="30" rx="8" fill="#f7fbfe" stroke="#e4f1f8" stroke-width="1"/>
+            <circle class="ill-dot ready" cx="430" cy="433" r="3" fill="#34d399"/>
+            <text x="441" y="437" font-family="'Segoe UI', system-ui, sans-serif" font-size="9.5" font-weight="600" fill="#4a5b78">Deploy #214 to production</text>
+            <text x="690" y="437" text-anchor="end" font-family="'Segoe UI', system-ui, sans-serif" font-size="9.5" font-weight="600" fill="#0f9d6e">3s</text>
+
+            <rect x="600" y="258" width="104" height="92" rx="10" fill="#f7fbfe" stroke="#e4f1f8" stroke-width="1"/>
+            <circle cx="652" cy="302" r="22" stroke="#e4f1f8" stroke-width="6" fill="none"/>
+            <path d="M652 280 A22 22 0 1 1 673.6 297.9" stroke="#1179af" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <text x="652" y="309" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="16" font-weight="800" fill="#1179af">96</text>
+            <text x="652" y="342" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="600" fill="#7a8ba6">Security score</text>
+
+            <rect x="600" y="358" width="104" height="100" rx="10" fill="#f7fbfe" stroke="#e4f1f8" stroke-width="1"/>
+            <text x="612" y="376" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="600" fill="#7a8ba6">Checks</text>
+            <circle cx="615" cy="392" r="2.5" fill="#34d399"/>
+            <text x="624" y="395" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="600" fill="#4a5b78">Auth</text>
+            <circle cx="615" cy="410" r="2.5" fill="#34d399"/>
+            <text x="624" y="413" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="600" fill="#4a5b78">Secrets</text>
+            <circle class="ill-dot pending" cx="615" cy="428" r="2.5" fill="#2d9cdb"/>
+            <text x="624" y="431" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="600" fill="#4a5b78">Deploy</text>
+            <circle cx="615" cy="446" r="2.5" fill="#34d399"/>
+            <text x="624" y="449" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="600" fill="#4a5b78">Backups</text>
+          </g>
+
+          <!-- Code editor panel slightly overlapping the dashboard -->
+          <g>
+            <rect x="330" y="360" width="176" height="126" rx="14" fill="#0f1a33" filter="url(#soft-shadow)"/>
+            <circle cx="344" cy="377" r="3" fill="#2a3d6b"/>
+            <circle cx="354" cy="377" r="3" fill="#2a3d6b"/>
+            <circle cx="364" cy="377" r="3" fill="#2a3d6b"/>
+            <text x="380" y="381" font-family="'Segoe UI', system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#8ea3c0">app.tsx</text>
+            <rect x="342" y="396" width="58" height="7" rx="3.5" fill="#2d9cdb" opacity="0.95"/>
+            <rect x="342" y="413" width="92" height="7" rx="3.5" fill="#2a3d6b"/>
+            <rect x="354" y="430" width="70" height="7" rx="3.5" fill="#2a3d6b"/>
+            <rect x="354" y="447" width="52" height="7" rx="3.5" fill="#6bb8ff" opacity="0.85"/>
+            <rect class="ill-dot ready" x="404" y="396" width="2" height="7" fill="#ffffff"/>
+            <rect x="342" y="464" width="40" height="7" rx="3.5" fill="#e5a944" opacity="0.85"/>
+          </g>
+
+          <!-- Thin connector lines joining every module to the central system -->
+          <g stroke="#b6d4e8" stroke-width="2">
+            <path class="ill-flow" d="M333 122 L478 200"/>
+            <path class="ill-flow" d="M545 124 V198"/>
+            <path class="ill-hide-sm" d="M713 152 L722 198"/>
+            <path class="ill-hide-sm" d="M744 285 H722"/>
+            <path class="ill-hide-sm" d="M740 430 H722"/>
+            <path class="ill-hide-sm" d="M313 477 H330"/>
+            <path class="ill-flow" d="M560 478 V460"/>
+            <path class="ill-hide-sm" d="M737 505 L720 460"/>
+          </g>
+          <g fill="#6bb8ff">
+            <circle cx="478" cy="200" r="3.5"/>
+            <circle cx="545" cy="198" r="3.5"/>
+            <circle class="ill-hide-sm" cx="722" cy="198" r="3.5"/>
+            <circle class="ill-hide-sm" cx="722" cy="285" r="3.5"/>
+            <circle class="ill-hide-sm" cx="722" cy="430" r="3.5"/>
+            <circle class="ill-hide-sm" cx="330" cy="477" r="3.5"/>
+            <circle cx="560" cy="460" r="3.5"/>
+            <circle class="ill-hide-sm" cx="720" cy="460" r="3.5"/>
+          </g>
+
+          <!-- Scale200 badge on the central system -->
+          <g>
+            <rect x="374" y="182" width="84" height="26" rx="13" fill="#17233f" filter="url(#soft-shadow-sm)"/>
+            <path d="M388 195 L391.5 198.5 L400 190" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <text x="416" y="199" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Scale200</text>
+          </g>
         </svg>
       </div>
     </div>
