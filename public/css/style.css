@@ -2809,9 +2809,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   }
   .hero-ill { height: 100%; }
 }
-@media (max-width: 63.999rem) {
-  .hero-ill .ill-hide-sm { display: none; }
-}
 
 /* Illustration motion */
 .hero-ill .ill-flow { stroke-dasharray: 5 9; animation: ill-flow-dash 1.1s linear infinite; }
