@@ -2629,7 +2629,7 @@ header#header.scrolled { height: 56px; border-bottom-color: rgba(42, 61, 107, 0.
 }
 
 /* ============================================================
-   Scale200 redesign — header / hero / footer / design system
+   Scale200 redesign. Header / hero / footer / design system.
    ============================================================ */
 :root {
   --brand-blue: #1179af;
@@ -2846,7 +2846,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 /* ============================================================
-   Scale200 light theme — bright, clean, trustworthy
+   Scale200 light theme. Bright, clean, trustworthy.
    ============================================================ */
 :root {
   /* Brand */
